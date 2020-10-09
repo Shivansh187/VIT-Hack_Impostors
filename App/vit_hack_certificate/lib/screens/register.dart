@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:vit_hack_certificate/constants.dart';
+
 class Register extends StatefulWidget {
   @override
   _RegisterState createState() => _RegisterState();
 }
-bool visible=false,visible1=false;
+
+bool visible = false, visible1 = false;
+
 class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
@@ -13,32 +16,39 @@ class _RegisterState extends State<Register> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: MediaQuery.of(context).size.height*0.16,),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.16,
+            ),
+            // Container that prints Welcome
             Center(
               child: Text(
                 "Welcome!",
                 style: TextStyle(
                     fontSize: 35,
                     fontWeight: FontWeight.bold,
-                    color: kAppBackgroundColour
-                ),
+                    color: kAppBackgroundColour),
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height*0.01,),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.01,
+            ),
+            // Container that prints next line after welcome
             Center(
               child: Text(
-                "Please enter the following details to register.",
+                "Enter Details to register",
                 style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: kAppBackgroundColour
-                ),
+                    color: kAppBackgroundColour),
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height*0.07,),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.07,
+            ),
+            // Container that takes the username
             Center(
               child: Container(
-                width: MediaQuery.of(context).size.width*0.7,
+                width: MediaQuery.of(context).size.width * 0.7,
                 child: TextFormField(
                   validator: (value) {
                     if (value == '') {
@@ -47,13 +57,12 @@ class _RegisterState extends State<Register> {
                       return null;
                     }
                   },
-                  style: TextStyle(
-                      color: Colors.black
-                  ),
+                  style: TextStyle(color: Colors.black),
                   decoration: new InputDecoration(
                     fillColor: Colors.grey[100],
                     filled: true,
-                    contentPadding: EdgeInsets.all(MediaQuery.of(context).size.width*0.04),
+                    contentPadding: EdgeInsets.all(
+                        MediaQuery.of(context).size.width * 0.04),
                     hintText: 'Username',
                     hintStyle: TextStyle(
                       color: Colors.grey,
@@ -64,16 +73,16 @@ class _RegisterState extends State<Register> {
                       color: Colors.grey,
                     ),
                     enabledBorder: new OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(
-                          const Radius.circular(27.5)),
+                      borderRadius:
+                          const BorderRadius.all(const Radius.circular(27.5)),
                       borderSide: BorderSide(
                         color: Colors.white,
                         width: 2,
                       ),
                     ),
                     focusedBorder: new OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(
-                          const Radius.circular(27.5)),
+                      borderRadius:
+                          const BorderRadius.all(const Radius.circular(27.5)),
                       borderSide: BorderSide(
                         color: Colors.black,
                         width: 2,
@@ -83,10 +92,13 @@ class _RegisterState extends State<Register> {
                 ),
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height*0.04,),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.04,
+            ),
+            // Container that takes the email id of the user
             Center(
               child: Container(
-                width: MediaQuery.of(context).size.width*0.7,
+                width: MediaQuery.of(context).size.width * 0.7,
                 child: TextFormField(
                   validator: (value) {
                     if (value == '') {
@@ -95,13 +107,12 @@ class _RegisterState extends State<Register> {
                       return null;
                     }
                   },
-                  style: TextStyle(
-                      color: Colors.black
-                  ),
+                  style: TextStyle(color: Colors.black),
                   decoration: new InputDecoration(
                     fillColor: Colors.grey[100],
                     filled: true,
-                    contentPadding: EdgeInsets.all(MediaQuery.of(context).size.width*0.04),
+                    contentPadding: EdgeInsets.all(
+                        MediaQuery.of(context).size.width * 0.04),
                     hintText: 'Email ID',
                     hintStyle: TextStyle(
                       color: Colors.grey,
@@ -112,29 +123,33 @@ class _RegisterState extends State<Register> {
                       color: Colors.grey,
                     ),
                     enabledBorder: new OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(
-                          const Radius.circular(27.5)),
+                      borderRadius:
+                          const BorderRadius.all(const Radius.circular(27.5)),
                       borderSide: BorderSide(
                         color: Colors.white,
                         width: 2,
                       ),
                     ),
                     focusedBorder: new OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(
-                          const Radius.circular(27.5)),
+                      borderRadius:
+                          const BorderRadius.all(const Radius.circular(27.5)),
                       borderSide: BorderSide(
                         color: Colors.black,
                         width: 2,
                       ),
                     ),
                   ),
+                  keyboardType: TextInputType.emailAddress,
                 ),
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height*0.04,),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.04,
+            ),
+            // Container that takes in the password
             Center(
               child: Container(
-                width: MediaQuery.of(context).size.width*0.7,
+                width: MediaQuery.of(context).size.width * 0.7,
                 child: TextFormField(
                   validator: (value) {
                     if (value == '') {
@@ -145,13 +160,12 @@ class _RegisterState extends State<Register> {
                   },
                   keyboardType: TextInputType.visiblePassword,
                   obscureText: !visible,
-                  style: TextStyle(
-                      color: Colors.black
-                  ),
+                  style: TextStyle(color: Colors.black),
                   decoration: new InputDecoration(
                     fillColor: Colors.grey[100],
                     filled: true,
-                    contentPadding: EdgeInsets.all(MediaQuery.of(context).size.width*0.04),
+                    contentPadding: EdgeInsets.all(
+                        MediaQuery.of(context).size.width * 0.04),
                     hintText: 'Password',
                     hintStyle: TextStyle(
                       color: Colors.grey,
@@ -172,16 +186,16 @@ class _RegisterState extends State<Register> {
                           });
                         }),
                     enabledBorder: new OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(
-                          const Radius.circular(27.5)),
+                      borderRadius:
+                          const BorderRadius.all(const Radius.circular(27.5)),
                       borderSide: BorderSide(
                         color: Colors.white,
                         width: 2,
                       ),
                     ),
                     focusedBorder: new OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(
-                          const Radius.circular(27.5)),
+                      borderRadius:
+                          const BorderRadius.all(const Radius.circular(27.5)),
                       borderSide: BorderSide(
                         color: Colors.black,
                         width: 2,
@@ -191,10 +205,13 @@ class _RegisterState extends State<Register> {
                 ),
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height*0.04,),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.04,
+            ),
+            // Container that takes in the confirmed password
             Center(
               child: Container(
-                width: MediaQuery.of(context).size.width*0.7,
+                width: MediaQuery.of(context).size.width * 0.7,
                 child: TextFormField(
                   validator: (value) {
                     if (value == '') {
@@ -205,13 +222,12 @@ class _RegisterState extends State<Register> {
                   },
                   keyboardType: TextInputType.visiblePassword,
                   obscureText: !visible1,
-                  style: TextStyle(
-                      color: Colors.black
-                  ),
+                  style: TextStyle(color: Colors.black),
                   decoration: new InputDecoration(
                     fillColor: Colors.grey[100],
                     filled: true,
-                    contentPadding: EdgeInsets.all(MediaQuery.of(context).size.width*0.04),
+                    contentPadding: EdgeInsets.all(
+                        MediaQuery.of(context).size.width * 0.04),
                     hintText: 'Confirm Password',
                     hintStyle: TextStyle(
                       color: Colors.grey,
@@ -232,16 +248,16 @@ class _RegisterState extends State<Register> {
                           });
                         }),
                     enabledBorder: new OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(
-                          const Radius.circular(27.5)),
+                      borderRadius:
+                          const BorderRadius.all(const Radius.circular(27.5)),
                       borderSide: BorderSide(
                         color: Colors.white,
                         width: 2,
                       ),
                     ),
                     focusedBorder: new OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(
-                          const Radius.circular(27.5)),
+                      borderRadius:
+                          const BorderRadius.all(const Radius.circular(27.5)),
                       borderSide: BorderSide(
                         color: Colors.black,
                         width: 2,
@@ -251,11 +267,13 @@ class _RegisterState extends State<Register> {
                 ),
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height*0.07,),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.07,
+            ),
             Center(
               child: Container(
-                height: MediaQuery.of(context).size.height*0.07,
-                width: MediaQuery.of(context).size.width*0.3,
+                height: MediaQuery.of(context).size.height * 0.07,
+                width: MediaQuery.of(context).size.width * 0.3,
                 child: FlatButton(
                   onPressed: () {},
                   shape: RoundedRectangleBorder(
@@ -265,10 +283,8 @@ class _RegisterState extends State<Register> {
                   child: Container(
                     child: Text(
                       "Register",
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold
-                      ),
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
