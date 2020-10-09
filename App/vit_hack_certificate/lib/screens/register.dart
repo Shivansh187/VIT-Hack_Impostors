@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:vit_hack_certificate/constants.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:vit_hack_certificate/screens/upload_file.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -9,6 +12,10 @@ class Register extends StatefulWidget {
 bool visible = false, visible1 = false;
 
 class _RegisterState extends State<Register> {
+  @override
+  final _auth = FirebaseAuth.instance;
+  String email;
+  String password;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -100,6 +107,10 @@ class _RegisterState extends State<Register> {
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.7,
                 child: TextFormField(
+                  onChanged: (value) {
+                    email = value;
+                    print(email);
+                  },
                   validator: (value) {
                     if (value == '') {
                       return 'This field is required.';
@@ -151,6 +162,9 @@ class _RegisterState extends State<Register> {
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.7,
                 child: TextFormField(
+                  onChanged: (value) {
+                    password = value;
+                  },
                   validator: (value) {
                     if (value == '') {
                       return 'This field is required.';
@@ -216,6 +230,8 @@ class _RegisterState extends State<Register> {
                   validator: (value) {
                     if (value == '') {
                       return 'This field is required.';
+                    } else if (password != value) {
+                      return 'Password did not match';
                     } else {
                       return null;
                     }
@@ -277,7 +293,24 @@ class _RegisterState extends State<Register> {
                 height: MediaQuery.of(context).size.height * 0.07,
                 width: MediaQuery.of(context).size.width * 0.3,
                 child: FlatButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    print(email);
+                    print(password);
+                    try {
+                      final newUser =
+                          await _auth.createUserWithEmailAndPassword(
+                              email: email, password: password);
+                      if (newUser != null) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => UploadFileOption()),
+                        );
+                      }
+                    } catch (e) {
+                      print(e);
+                    }
+                  },
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(24),
                   ),
