@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "229412641481",
+    "firebase_url": "https://vit-hack-60e97.firebaseio.com",
+    "project_id": "vit-hack-60e97",
+    "storage_bucket": "vit-hack-60e97.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:229412641481:android:634e4ab7f78fcbf6f04b18",
+        "android_client_info": {
+          "package_name": "co.vit_hack_certificate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "229412641481-0qdo7bk45i0asidig7bp59jjrgvek43m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-D7gIftMr1_SSNhDtu6kFh1fWwks_wgA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "229412641481-0qdo7bk45i0asidig7bp59jjrgvek43m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

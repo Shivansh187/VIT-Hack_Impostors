@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vit_hack_certificate/constants.dart';
 import 'package:vit_hack_certificate/screens/login.dart';
 import 'package:vit_hack_certificate/screens/register.dart';
+
 // This is the Initial page screen that has the option of login or register
 class LoginOrRegister extends StatelessWidget {
   @override
@@ -45,28 +46,30 @@ class LoginOrRegister extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * 0.8,
                   child: FlatButton(
                     onPressed: () {
-                    Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Login()),
-                    );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Login()),
+                      );
                     },
                     child: Center(
                       child: Text(
                         'Login',
-                        style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.w600),
+                        style: TextStyle(
+                            fontSize: 25.0, fontWeight: FontWeight.w600),
                       ),
                     ),
                   ),
                   decoration: BoxDecoration(
-                  color: kLoginButtonColour,
-                  borderRadius: BorderRadius.all(
-                  Radius.circular(30.0),
-                  ),
+                    color: kLoginButtonColour,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(30.0),
+                    ),
                   ),
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.02,
                 ),
+                // Container that is Register button
                 Container(
                   height: MediaQuery.of(context).size.height * 0.08,
                   width: MediaQuery.of(context).size.width * 0.8,
@@ -80,7 +83,8 @@ class LoginOrRegister extends StatelessWidget {
                     child: Center(
                       child: Text(
                         'Register',
-                        style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.w600),
+                        style: TextStyle(
+                            fontSize: 25.0, fontWeight: FontWeight.w600),
                       ),
                     ),
                   ),
@@ -99,4 +103,3 @@ class LoginOrRegister extends StatelessWidget {
     );
   }
 }
-
