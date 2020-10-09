@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vit_hack_certificate/constants.dart';
+import 'package:vit_hack_certificate/screens/upload_file.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -141,25 +142,35 @@ class _LoginState extends State<Login> {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.07,
             ),
-            Center(
-              child: Container(
-                height: MediaQuery.of(context).size.height * 0.07,
-                width: MediaQuery.of(context).size.width * 0.3,
-                child: FlatButton(
-                  onPressed: () {},
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(24),
-                  ),
-                  color: Colors.redAccent,
-                  child: Container(
-                    child: Text(
-                      "Login",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            // Login button
+            // On pressed it should take  you to the upload page
+            FlatButton(
+              child: Center(
+                child: Container(
+                  height: MediaQuery.of(context).size.height * 0.07,
+                  width: MediaQuery.of(context).size.width * 0.3,
+                  child: FlatButton(
+                    onPressed: () {},
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(24),
+                    ),
+                    color: Colors.redAccent,
+                    child: Container(
+                      child: Text(
+                        "Login",
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ),
                 ),
               ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => UploadFileOption()),
+                );
+              },
             ),
           ],
         ),

@@ -270,6 +270,8 @@ class _RegisterState extends State<Register> {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.07,
             ),
+            // button for registration
+            // Once register it would take you to the
             Center(
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.07,
