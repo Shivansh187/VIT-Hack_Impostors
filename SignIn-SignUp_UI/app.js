@@ -10,6 +10,7 @@ sign_in_btn.addEventListener("click", () => {
   container.classList.remove("sign-up-mode");
 });
 
+
 // //google login
 
 // const google= document.querySelector("#google");
@@ -22,12 +23,29 @@ sign_in_btn.addEventListener("click", () => {
 //       });
 //     });
 
+//google login
+
+const google= document.querySelector("#google");
+
+    google.addEventListener('click', (e) => {
+      let provider = new firebase.auth.GoogleAuthProvider();
+
+      auth.signInWithPopup(provider).then(cred => {
+        console.log(cred.user);
+      });
+    });
+
+
 
 
   // signup
   const signupform= document.querySelector('sign-up-form');
 
+
   signupform.addEventListener('click', (e) => {
+
+  signupform.addEventListener('submit', (e) => {
+
     e.preventDefault();
 
     const username= signupform['sign-up-name'].value
@@ -62,7 +80,10 @@ sign_in_btn.addEventListener("click", () => {
           auth.signOut();
         }
         console.log(cred.user);
+
         alert("welcome")
+
+
         loginform.reset();
       });
     });
