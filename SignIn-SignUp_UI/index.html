@@ -3,28 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
     <script src="https://kit.fontawesome.com/fe36f8a5e8.js" crossorigin="anonymous"></script>
-    <title>Sign In & Sign Up Form</title>
     <link rel="stylesheet" href="style.css">
+    <title>Sign In & Sign Up Form</title>
 </head>
 <body>
     <div class="container">
         <div class="forms-container">
             <div class="signin-signup">
-                <!-- SIGN UP PAGE -->
-                <form action="" class="sign-in-form">
+                <!-- SIGN IN PAGE -->
+                <form action="#" class="sign-in-form">
                     <h2 class="title">Sign In</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username">
+                        <input type="text" placeholder="Username" />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password">
+                        <input type="password" placeholder="Password" />
                     </div>
-                    <input type="submit" value="Login" class="btn solid">
+                    <input type="submit" value="Login" class="btn solid" />
 
-                    <p class="social-text">Or Sign In with Social Platforms</p>
+                    <!-- <p class="social-text">Or Sign In with Social Platforms</p>
                     <div class="social-media">
                         <a href="#" class="social-icon">
                             <i class="fab fa-facebook-f"></i>
@@ -38,31 +41,31 @@
                         <a href="#" class="social-icon">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                    </div>
+                    </div> -->
                 </form>
 
-                <!-- SIGN IN PAGE -->
-                <form action="" class="sign-up-form">
+                <!-- SIGN UP PAGE -->
+                <form action="#" class="sign-up-form">
                     <h2 class="title">Sign Up</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username">
+                        <input type="text" class="sign-up-name" placeholder="Username" />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
-                        <input type="text" placeholder="Email">
+                        <input type="text" class="sign-up-email" placeholder="Email" />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password">
+                        <input type="password" class="sign-up-password" placeholder="Password" />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-fingerprint"></i>
-                        <input type="password" placeholder="Confirm Password">
+                        <input type="password" class="sign-up-confirmpassword" placeholder="Confirm Password">
                     </div>
-                    <input type="submit" value="Sign Up" class="btn solid">
+                    <input type="submit" value="Sign Up" class="btn solid" />
 
-                    <p class="social-text">Or Sign Up with Social Platforms</p>
+                    <!-- <p class="social-text">Or Sign Up with Social Platforms</p>
                     <div class="social-media">
                         <a href="#" class="social-icon">
                             <i class="fab fa-facebook-f"></i>
@@ -76,7 +79,7 @@
                         <a href="#" class="social-icon">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                    </div>
+                    </div> -->
                 </form>
             </div>
         </div>
@@ -88,7 +91,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     <button class="btn transparent" id="sign-up-btn">Sign Up</button>
                 </div>
-                <img src="img/boy.svg" class="image" alt="">
+                <img src="img/boy.svg" class="image" alt="" />
             </div>
 
             <!-- UPPER RIGHT TEXT -->
@@ -102,6 +105,10 @@
             </div>
         </div>
     </div>
+    
+
+    <!-- <script src="config.js"></script> -->
     <script src="app.js"></script>
+
 </body>
 </html>

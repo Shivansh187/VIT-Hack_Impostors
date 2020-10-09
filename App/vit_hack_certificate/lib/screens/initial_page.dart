@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vit_hack_certificate/constants.dart';
-
+import 'package:vit_hack_certificate/screens/login.dart';
+import 'package:vit_hack_certificate/screens/register.dart';
 // This is the Initial page screen that has the option of login or register
 class LoginOrRegister extends StatelessWidget {
   @override
@@ -39,11 +40,57 @@ class LoginOrRegister extends StatelessWidget {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.1,
                 ),
-                LoginOrRegisterButton(text: 'Login'),
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.08,
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  child: FlatButton(
+                    onPressed: () {
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Login()),
+                    );
+                    },
+                    child: Center(
+                      child: Text(
+                        'Login',
+                        style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                  color: kLoginButtonColour,
+                  borderRadius: BorderRadius.all(
+                  Radius.circular(30.0),
+                  ),
+                  ),
+                ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.02,
                 ),
-                LoginOrRegisterButton(text: 'Register'),
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.08,
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  child: FlatButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Register()),
+                      );
+                    },
+                    child: Center(
+                      child: Text(
+                        'Register',
+                        style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                    color: kLoginButtonColour,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(30.0),
+                    ),
+                  ),
+                ),
               ],
             ),
           )
@@ -53,27 +100,3 @@ class LoginOrRegister extends StatelessWidget {
   }
 }
 
-class LoginOrRegisterButton extends StatelessWidget {
-  LoginOrRegisterButton({@required this.text});
-
-  final String text;
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height * 0.08,
-      width: MediaQuery.of(context).size.width * 0.8,
-      child: Center(
-        child: Text(
-          text,
-          style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.w600),
-        ),
-      ),
-      decoration: BoxDecoration(
-        color: kLoginButtonColour,
-        borderRadius: BorderRadius.all(
-          Radius.circular(30.0),
-        ),
-      ),
-    );
-  }
-}
