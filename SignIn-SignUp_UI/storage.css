@@ -5,6 +5,10 @@
     box-sizing: border-box;
   }
   
+.logout {
+  margin-left: 85%;
+}
+
   body {
     background: #fefefe;
     font-family: sans-serif;

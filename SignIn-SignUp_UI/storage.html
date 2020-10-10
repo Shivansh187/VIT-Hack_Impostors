@@ -17,12 +17,11 @@
             <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
                <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--8-col-desktop">
                   <h3>Upload Documents</h3>
+                  <div class="logout">
+                     <button class="button" onclick="auth.signOut()" style="vertical-align:middle"><span>Log Out</span></button>
+                  </div>
                </div>
             </div>
-            <div>
-               <button id="logout">Logout</button>
-            </div>
-
          </header>
          <main class="mdl-layout__content mdl-color--grey-100">
          <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
@@ -147,5 +146,13 @@
       document.getElementById('file').addEventListener('change', handleFileSelect, false);
     }
       </script>
+
+      <script>
+         firebase.auth().onAuthStateChanged(function(user){
+             if(!user){
+                 window.location.href = "index.html";
+             }
+         })
+     </script>
    </body>
 </html>
