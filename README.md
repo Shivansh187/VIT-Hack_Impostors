@@ -17,7 +17,7 @@
 ## Instructions to run
 
 * Instructions:
-	-  The Excel Sheet uploaded must contain only 3 columns int the given order:
+	-  The Excel Sheet uploaded must contain only 3 columns in the given order:
 		Name
 		Project
 		Position
