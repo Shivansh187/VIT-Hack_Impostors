@@ -3,7 +3,7 @@ import 'package:vit_hack_certificate/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:vit_hack_certificate/screens/upload_file.dart';
 import 'package:firebase_core/firebase_core.dart';
-
+import 'login.dart';
 class Register extends StatefulWidget {
   @override
   _RegisterState createState() => _RegisterState();
@@ -53,55 +53,7 @@ class _RegisterState extends State<Register> {
               height: MediaQuery.of(context).size.height * 0.07,
             ),
             // Container that takes the username
-            Center(
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.7,
-                child: TextFormField(
-                  validator: (value) {
-                    if (value == '') {
-                      return 'This field is required.';
-                    } else {
-                      return null;
-                    }
-                  },
-                  style: TextStyle(color: Colors.black),
-                  decoration: new InputDecoration(
-                    fillColor: Colors.grey[100],
-                    filled: true,
-                    contentPadding: EdgeInsets.all(
-                        MediaQuery.of(context).size.width * 0.04),
-                    hintText: 'Username',
-                    hintStyle: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 18,
-                    ),
-                    prefixIcon: Icon(
-                      Icons.person,
-                      color: Colors.grey,
-                    ),
-                    enabledBorder: new OutlineInputBorder(
-                      borderRadius:
-                          const BorderRadius.all(const Radius.circular(27.5)),
-                      borderSide: BorderSide(
-                        color: Colors.white,
-                        width: 2,
-                      ),
-                    ),
-                    focusedBorder: new OutlineInputBorder(
-                      borderRadius:
-                          const BorderRadius.all(const Radius.circular(27.5)),
-                      borderSide: BorderSide(
-                        color: Colors.black,
-                        width: 2,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.04,
-            ),
+
             // Container that takes the email id of the user
             Center(
               child: Container(
@@ -244,7 +196,7 @@ class _RegisterState extends State<Register> {
                     filled: true,
                     contentPadding: EdgeInsets.all(
                         MediaQuery.of(context).size.width * 0.04),
-                    hintText: 'Confirm Password',
+                    hintText: 'Confirm ',
                     hintStyle: TextStyle(
                       color: Colors.grey,
                       fontSize: 18,
@@ -287,7 +239,7 @@ class _RegisterState extends State<Register> {
               height: MediaQuery.of(context).size.height * 0.07,
             ),
             // button for registration
-            // Once register it would take you to the
+            // Once register it would take you to the login page
             Center(
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.07,
@@ -304,7 +256,7 @@ class _RegisterState extends State<Register> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => UploadFileOption()),
+                              builder: (context) => Login()),
                         );
                       }
                     } catch (e) {
@@ -325,6 +277,7 @@ class _RegisterState extends State<Register> {
                 ),
               ),
             ),
+            SizedBox(height: 20,)
           ],
         ),
       ),
