@@ -13,7 +13,9 @@ sign_in_btn.addEventListener("click", () => {
 auth.onAuthStateChanged( user => {
 
   if(user){
+    
     alert("welcome");
+    window.location.href = "storage.html";
 
   } else {
     
