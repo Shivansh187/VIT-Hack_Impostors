@@ -57,12 +57,7 @@ John Doe
 
 
 <td>
-
-John Doe
-
-<p align="center">
-<img src = "https://dscvit.com/images/dsc-logo-square.svg" width="150" height="150" alt="Your Name Here (Insert Your Image Link In Src">
-</p>
+Shivansh Chadha
 <p align="center">
 <a href = "https://github.com/person2"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36" alt="GitHub"/></a>
 <a href = "https://www.linkedin.com/in/person2">
@@ -75,11 +70,7 @@ John Doe
 
 <td>
 
-John Doe
-
-<p align="center">
-<img src = "https://dscvit.com/images/dsc-logo-square.svg" width="150" height="150" alt="Your Name Here (Insert Your Image Link In Src">
-</p>
+Jayesh Singh
 <p align="center">
 <a href = "https://github.com/person3"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36" alt="GitHub"/></a>
 <a href = "https://www.linkedin.com/in/person3">
@@ -91,6 +82,6 @@ John Doe
   </table>
 
 <p align="center">
-	Made with :heart: by <a href="https://dscvit.com">DSC VIT</a>
+	Made with :heart: by Impostors
 </p>
 
