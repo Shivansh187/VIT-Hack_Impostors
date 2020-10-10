@@ -14,8 +14,9 @@ List template=[
 ];
 
 String selected;
+String image_path;//contains image which will be the template
 int i;
-String custom_temp;
+String custom_temp=null;
 String sheet;
 class _UploadFileOptionState extends State<UploadFileOption> {
   List name=[];
@@ -57,6 +58,7 @@ class _UploadFileOptionState extends State<UploadFileOption> {
                       onTap: (){//to detect when card is selected
                         setState(() {
                           select[index]=!select[index];
+                          custom_temp=null;
                           if(select[index])
                             selected=template[index];//contains selected image
                           else if(select[index]==false)
@@ -92,7 +94,7 @@ class _UploadFileOptionState extends State<UploadFileOption> {
                   }
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height*0.03,),
+            SizedBox(height: MediaQuery.of(context).size.height*0.06,),
             Center(
               child: Container(
                 height: MediaQuery.of(context).size.height*0.07,
@@ -103,6 +105,11 @@ class _UploadFileOptionState extends State<UploadFileOption> {
                         type: FileType.image,
                     );
                     setState(() {
+                      selected=null;
+                      for(i=0;i<select.length;i++)
+                      {
+                        select[i]=false;
+                      }
                       custom_temp=templatePath.files.single.path;//contains the path of custom template
                     });
                     print(custom_temp);
@@ -122,37 +129,65 @@ class _UploadFileOptionState extends State<UploadFileOption> {
               ),
             ),
             SizedBox(height: MediaQuery.of(context).size.height*0.03,),
+            custom_temp!=null?
+            Container(
+              height: MediaQuery.of(context).size.height*0.2,
+              width: MediaQuery.of(context).size.width*0.7,
+              child: Image.file(File(custom_temp)),
+            )
+            :Container(
+              height: 0,
+              width: 0,
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height*0.03,),
             Center(
               child: Container(
                 height: MediaQuery.of(context).size.height*0.07,
                 width:MediaQuery.of(context).size.width*0.8,
                 child: FlatButton(
                   onPressed: () async {
-                    FilePickerResult sheetPath = await FilePicker.platform.pickFiles(
-                      type: FileType.custom,
-                      allowedExtensions: ['xlsx'],
-                    );
-                    setState(() {
-                      sheet=sheetPath.files.single.path;//contains the path of excel sheet
-                    });
-                    print(sheet);
-                    var bytes = File(sheet).readAsBytesSync();
-                    var excel = Excel.decodeBytes(bytes);
-                    print(excel.tables.keys);
-                    for (var detail in excel.tables.keys) {
-                      print(detail); //sheet name
-                      print(excel.tables[detail].rows);
-                      print(excel.tables[detail].maxCols);
-                      print(excel.tables[detail].maxRows);
-                      for (var row in excel.tables[detail].rows) {
-                        name.add(row[0]);//Contains name of participants
-                        project.add(row[1]);//Contains name of project
-                        position.add(row[2]);//Contains position
-                      }
+                    print(selected);
+                    print(custom_temp);
+                    if (selected == null && custom_temp == null) {
+                      print("Something");
                     }
-                    print(name);
-                    print(project);
-                    print(position);
+                    else {
+                      FilePickerResult sheetPath = await FilePicker.platform
+                          .pickFiles(
+                        type: FileType.custom,
+                        allowedExtensions: ['xlsx'],
+                      );
+                      setState(() {
+                        selected = null;
+                        sheet = sheetPath.files.single
+                            .path; //contains the path of excel sheet
+                      });
+                      print(sheet);
+                      var bytes = File(sheet).readAsBytesSync();
+                      var excel = Excel.decodeBytes(bytes);
+                      print(excel.tables.keys);
+                      for (var detail in excel.tables.keys) {
+                        print(detail); //sheet name
+                        print(excel.tables[detail].rows);
+                        print(excel.tables[detail].maxCols);
+                        print(excel.tables[detail].maxRows);
+                        for (var row in excel.tables[detail].rows) {
+                          name.add(row[0]); //Contains name of participants
+                          project.add(row[1]); //Contains name of project
+                          position.add(row[2]); //Contains position
+                        }
+                      }
+                      print(name);
+                      print(project);
+                      print(position);
+                      if (custom_temp == null) {
+                        image_path = "images/" + selected;
+                      }
+                      else {
+                        image_path = custom_temp;
+                      }
+                      print(image_path);//contains the image which will finally act as the template
+                    }
                   },
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
