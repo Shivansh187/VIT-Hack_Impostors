@@ -32,7 +32,7 @@ class LoginOrRegister extends StatelessWidget {
                 // Container to store name of the app
                 Container(
                   child: Text(
-                    'HACK_CERTIFICATE',
+                    kAppName,
                     style:
                         TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
                   ),
