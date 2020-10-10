@@ -6,10 +6,10 @@
 ---
 
 ## Functionalities
-- [ ]  Admin Authentication (Login and SignUp)
-- [ ]  Uploading of Documents (Excel File and Image File)
-- [ ]  Generating a Folder containing all Generated Certificates
-- [ ]  Log Out User
+- [✔]  Admin Authentication (Login and SignUp)
+- [✔]  Uploading of Documents (Excel File and Image File)
+- [✔]  Generating a Folder containing all Generated Certificates
+- [✔]  Log Out User
 
 <br>
 
