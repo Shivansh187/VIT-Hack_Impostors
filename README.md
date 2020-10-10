@@ -43,7 +43,7 @@
 Shivansh Chadha
 <p align="center">
 <a href = "https://github.com/Shivansh187"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36" alt="GitHub"/></a>
-<a href = "https://www.linkedin.com/in/person2">
+<a href = "https://www.linkedin.com/in/shivansh-chadha-3657bb108/">
 <img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36" alt="LinkedIn"/>
 </a>
 </p>
@@ -53,7 +53,7 @@ Shivansh Chadha
 Jayesh Singh
 <p align="center">
 <a href = "https://github.com/jaguar017"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36" alt="GitHub"/></a>
-<a href = "https://www.linkedin.com/in/person3">
+<a href = "https://www.linkedin.com/in/jayesh-singh-98872b1a1">
 <img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36" alt="LinkedIn"/>
 </a>
 </p>
@@ -63,7 +63,7 @@ Jayesh Singh
 Brajesh Kumar Roy
 <p align="center">
 <a href = "https://github.com/bkrroy"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36" alt="GitHub"/></a>
-<a href = "https://www.linkedin.com/in/person2">
+<a href = "https://www.linkedin.com/in/brajesh-kumar-roy-925b2119b/">
 <img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36" alt="LinkedIn"/>
 </a>
 </p>
@@ -73,9 +73,6 @@ Brajesh Kumar Roy
 Dananjay Murugesh
 <p align="center">
 <a href = "https://github.com/DananjayM"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36" alt="GitHub"/></a>
-<a href = "https://www.linkedin.com/in/person2">
-<img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36" alt="LinkedIn"/>
-</a>
 </p>
 </td>
 
@@ -83,9 +80,6 @@ Dananjay Murugesh
 Dhruv Singh
 <p align="center">
 <a href = "https://github.com/Dhruv0607"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36" alt="GitHub"/></a>
-<a href = "https://www.linkedin.com/in/person2">
-<img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36" alt="LinkedIn"/>
-</a>
 </p>
 </td>
 
@@ -93,9 +87,6 @@ Dhruv Singh
 Aditya Singh
 <p align="center">
 <a href = "https://github.com/adityajsingh"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36" alt="GitHub"/></a>
-<a href = "https://www.linkedin.com/in/person2">
-<img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36" alt="LinkedIn"/>
-</a>
 </p>
 </td>
 </tr>
