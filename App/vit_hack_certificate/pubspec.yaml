@@ -33,6 +33,11 @@ dependencies:
   cupertino_icons: ^0.1.3
   firebase_core: ^0.5.0+1
   firebase_auth: ^0.18.1+2
+  gallery_saver: ^2.0.1
+  save_in_gallery: ^0.1.3
+  path_provider: ^1.6.18
+  image_downloader: ^0.20.1
+  image_gallery_saver: ^1.6.0
 
 dev_dependencies:
   flutter_test:
@@ -53,6 +58,8 @@ flutter:
     - images/login.jpeg
     - images/certificate1.jpg
     - images/certificate2.jpg
+    - images/original.PNG
+    - images/display.jpg
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
