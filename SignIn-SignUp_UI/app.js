@@ -10,49 +10,55 @@ sign_in_btn.addEventListener("click", () => {
   container.classList.remove("sign-up-mode");
 });
 
+auth.onAuthStateChanged( user => {
 
-//google login
+  if(user){
+    alert("welcome");
 
-const google= document.querySelector("#google");
+  } else {
+    
 
-    google.addEventListener('click', (e) => {
-      let provider = new firebase.auth.GoogleAuthProvider();
+    //login
+    const loginform= document.querySelector('#login-form');
 
-      auth.signInWithPopup(provider).then(cred => {
-        console.log(cred.user);
-      });
-    });
-
-
-
-  // signup
-  const signupform= document.querySelector('#sign-up-form');
-  signupform.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const username= signupform['sign-up-name'].value
-    const email= signupform['sign-up-email'].value;
-    const password= signupform['sign-up-password'].value;
-    auth.createUserWithEmailAndPassword(email,password).then(cred => {
-      cred.user.sendEmailVerification();
-      auth.signOut();
-      alert('Verify Your Email ID to be able to Login');
-      signupform.reset();
-    });
-  });
-
-  // login using email
-  const loginform= document.querySelector('#login-form');
     loginform.addEventListener('submit', (e) => {
       e.preventDefault();
-      const email= loginform['login-email'].value;
-      const password= loginform['login-password'].value;
+
+      const email= loginform['username'].value;
+      const password= loginform['password'].value;
+
+
       auth.signInWithEmailAndPassword(email,password).then( cred => {
         if(!cred.user.emailVerified){
           alert('Verify Your Email ID to be able to Login');
           auth.signOut();
         }
         console.log(cred.user);
-        alert("welcome")
         loginform.reset();
       });
     });
+
+    
+
+    //signup
+    const signupform= document.querySelector('#signup-form');
+
+    signupform.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const email= signupform['signup-email'].value;
+      const password= signupform['signup-password'].value;
+
+      auth.createUserWithEmailAndPassword(email,password).then(cred => {
+        cred.user.sendEmailVerification();
+        auth.signOut();
+        alert('Verify Your Email ID to be able to Login');
+
+        signupform.reset();
+      });
+
+    });
+
+  }
+
+});
