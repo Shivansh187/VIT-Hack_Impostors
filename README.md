@@ -9,7 +9,7 @@
 - [✔]  Admin Authentication (Login and SignUp)
 - [✔]  Uploading of Documents (Excel File and Image File)
 - [✔]  Generating a Folder containing all Generated Certificates
-- [✔]  Log Out User
+- [✔]  Log Out Admin
 
 <br>
 
