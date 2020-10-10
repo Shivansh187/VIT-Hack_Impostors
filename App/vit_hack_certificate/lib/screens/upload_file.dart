@@ -14,9 +14,9 @@ class UploadFileOption extends StatefulWidget {
 List template = ["certificate1.jpg", "certificate2.jpg"];
 
 String selected;
-String image_path; //contains image which will be the template
+String image_path;//contains image which will be the template
 int i;
-String custom_temp = null;
+String custom_temp=null;
 String sheet;
 
 class _UploadFileOptionState extends State<UploadFileOption> {
@@ -52,6 +52,7 @@ class _UploadFileOptionState extends State<UploadFileOption> {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.32,
             ),
+
             Center(
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.07,
@@ -102,6 +103,7 @@ class _UploadFileOptionState extends State<UploadFileOption> {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.03,
             ),
+
             Center(
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.07,
@@ -115,6 +117,7 @@ class _UploadFileOptionState extends State<UploadFileOption> {
                     } else {
                       FilePickerResult sheetPath =
                           await FilePicker.platform.pickFiles(
+
                         type: FileType.custom,
                         allowedExtensions: ['xlsx'],
                       );
@@ -151,6 +154,7 @@ class _UploadFileOptionState extends State<UploadFileOption> {
                       }
                       print(
                           image_path); //contains the image which will finally act as the template
+
                     }
                   },
                   shape: RoundedRectangleBorder(
