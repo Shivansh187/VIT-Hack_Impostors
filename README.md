@@ -16,20 +16,13 @@
 
 ## Instructions to run
 
-* Pre-requisites:
-	-  < insert pre-requisite >
-	-  < insert pre-requisite >
-
-* < directions to install > 
-```bash
-< insert code >
-```
-
-* < directions to execute >
-
-```bash
-< insert code >
-```
+* Instructions:
+	-  The Excel Sheet uploaded must contain only 3 columns int the given order:
+		Name
+		Project
+		Position
+	-  The App version can be accessed by the given .apk file.
+	-  The Web version can be accessed using the hosted website.
 
 ## Contributors
 
