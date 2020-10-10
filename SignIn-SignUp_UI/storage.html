@@ -66,7 +66,7 @@ limitations under the License.
   <script src="config.js"></script>
   <script>
     // var auth = firebase.auth();
-    var storage = customApp.storage("gs://certify-b6605.appspot.com");
+    var storage = firebase.app().storage("");
     var storageRef=storage.ref();
     function handleFileSelect(evt) {
       evt.stopPropagation();
