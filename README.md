@@ -9,10 +9,10 @@
 [![Join Us](https://img.shields.io/badge/Join%20Us-Developer%20Student%20Clubs-red)](https://dsc.community.dev/vellore-institute-of-technology/)
 
 ## Functionalities
-- [ ]  < insert functionality >
-- [ ]  < insert functionality >
-- [ ]  < insert functionality >
-- [ ]  < insert functionality >
+- [ ]  Admin Authentication (Login and SignUp)
+- [ ]  Uploading of Documents (Excel File and Image File)
+- [ ]  Generating a Folder containing all Generated Certificates
+- [ ]  Log Out User
 
 <br>
 
