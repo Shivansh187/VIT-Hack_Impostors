@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset=utf-8 />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Certificate Generator</title>
+      <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
+      <link rel="stylesheet" href="storage.css">  
+   </head>
+   <body>
+      <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
+         <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
+            <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+               <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--8-col-desktop">
+                  <h3>Upload Documents</h3>
+               </div>
+            </div>
+         </header>
+         <main class="mdl-layout__content mdl-color--grey-100">
+         <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+            <div class="row">
+                <!-- Upload File -->
+               <div class="card">
+                  <div class="card-header">
+                     <h1>Upload File</h1>
+                  </div>
+                  <div class="card-body">
+                     <p>
+                        Select a file below. When it is uploaded, a link will be displayed to the uploaded file.
+                     </p>
+                     <input class="btn" type="file" id="file" name="file"/>
+                  </div>
+               </div>
+               <!-- Upload Certificate -->
+               <div class="container">
+                  <div class="wrapper">
+                     <div class="image">
+                        <img src="" alt="">
+                     </div>
+                     <div class="content">
+                        <div class="icon">
+                           <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <div class="text">
+                           Upload Design
+                        </div>
+                     </div>
+                     <div id="cancel-btn">
+                        <i class="fas fa-times"></i>
+                     </div>
+                     <div class="file-name">
+                        File name here
+                     </div>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Select a file below. When it is uploaded, a link will be displayed to the uploaded file.
+                    </p>
+                    <button onclick="defaultBtnActive()" id="custom-btn">Choose a file</button>
+                    <input id="default-btn" type="file" hidden>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Button -->
+         <div class="center">
+          <button class="button" style="vertical-align:middle"><span>Submit</span></button>
+         </div>
+      </div>
+      </div>
+
+      <script src="https://kit.fontawesome.com/fe36f8a5e8.js" crossorigin="anonymous"></script>
+
+      <!-- For Image Upload -->
+      <script>
+         const wrapper = document.querySelector(".wrapper");
+         const fileName = document.querySelector(".file-name");
+         const defaultBtn = document.querySelector("#default-btn");
+         const customBtn = document.querySelector("#custom-btn");
+         const cancelBtn = document.querySelector("#cancel-btn i");
+         const img = document.querySelector("img");
+         let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+         function defaultBtnActive(){
+           defaultBtn.click();
+         }
+         defaultBtn.addEventListener("change", function(){
+           const file = this.files[0];
+           if(file){
+             const reader = new FileReader();
+             reader.onload = function(){
+               const result = reader.result;
+               img.src = result;
+               wrapper.classList.add("active");
+             }
+             cancelBtn.addEventListener("click", function(){
+               img.src = "";
+               wrapper.classList.remove("active");
+             })
+             reader.readAsDataURL(file);
+           }
+           if(this.value){
+             let valueStore = this.value.match(regExp);
+             fileName.textContent = valueStore;
+           }
+         });
+      </script>
+
+      <!-- For Firebase Storage -->
+      <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
+      <script src="config.js"></script>
+      <script>
+         var storage = firebase.app().storage("");
+         var storageRef=storage.ref();
+         function handleFileSelect(evt) {
+           evt.stopPropagation();
+           evt.preventDefault();
+           var file = evt.target.files[0];
+           var metadata = {
+             'contentType': file.type
+           };
+           storageRef.child('images/' + file.name).put(file, metadata).then(function(snapshot) {
+             console.log('Uploaded', snapshot.totalBytes, 'bytes.');
+             console.log('File metadata:', snapshot.metadata);
+             snapshot.ref.getDownloadURL().then(function(url) {
+               console.log('File available at', url);
+               document.getElementById('linkbox').innerHTML = '<a href="' +  url + '">Click For File</a>';
+             });
+           }).catch(function(error) {
+             console.error('Upload failed:', error);
+           });
+         }
+         window.onload = function() {
+           document.getElementById('file').addEventListener('change', handleFileSelect, false);
+           document.getElementById('file').disabled = true;
+           auth.onAuthStateChanged(function(user) {
+             if (user) {
+               console.log('Anonymous user signed-in.', user);
+               document.getElementById('file').disabled = false;
+             } else {
+               console.log('There was no anonymous session. Creating a new anonymous user.');
+               // Sign the user in anonymously since accessing Storage requires the user to be authorized.
+               auth.signInAnonymously().catch(function(error) {
+                 if (error.code === 'auth/operation-not-allowed') {
+                   window.alert('Anonymous Sign-in failed. Please make sure that you have enabled anonymous ' +
+                       'sign-in on your Firebase project.');
+                 }
+               });
+             }
+           });
+         }
+      </script>
+   </body>
+</html>
