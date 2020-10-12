@@ -1,6 +1,6 @@
 # vit_hack_certificate
 
-A new Flutter application.
+This app here genertes a certificate based on the fact that you provide a certificate template and an excel files. It maps over the content of excel file onto the certificate.
 
 ## Getting Started
 
