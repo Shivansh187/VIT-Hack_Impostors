@@ -50,7 +50,7 @@ class _UploadFileOptionState extends State<UploadFileOption> {
               ),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.32,
+              height: MediaQuery.of(context).size.height * 0.02,
             ),
 
             Center(
@@ -88,7 +88,7 @@ class _UploadFileOptionState extends State<UploadFileOption> {
               ),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.03,
+              height: MediaQuery.of(context).size.height * 0.01,
             ),
             custom_temp != null
                 ? Container(
@@ -180,6 +180,9 @@ class _UploadFileOptionState extends State<UploadFileOption> {
               width: MediaQuery.of(context).size.width * 0.8,
               child: FlatButton(
                 onPressed: () {
+                  setState(() {
+
+                  });
                   print("Name $name");
                   print("project $project");
                   print("position $position");
