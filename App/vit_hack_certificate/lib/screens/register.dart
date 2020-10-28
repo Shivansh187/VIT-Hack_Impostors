@@ -29,7 +29,7 @@ class _RegisterState extends State<Register> {
             // Container that prints Welcome
             Center(
               child: Text(
-                "Welcome!",
+                "Welcome!!",
                 style: TextStyle(
                     fontSize: 35,
                     fontWeight: FontWeight.bold,
@@ -183,7 +183,7 @@ class _RegisterState extends State<Register> {
                     if (value == '') {
                       return 'This field is required.';
                     } else if (password != value) {
-                      return 'Password did not match';
+                      return 'Password did not match with that provided';
                     } else {
                       return null;
                     }
